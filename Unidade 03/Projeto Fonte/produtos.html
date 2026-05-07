@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtos · Império Natural</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/app.js" defer></script>
+    <script type="module" src="js/produtos.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="logo" href="index.html">Império Natural</a>
+        <nav class="nav-links">
+          <a class="nav-link" data-nav href="index.html">Início</a>
+          <a class="nav-link" data-nav href="produtos.html">Produtos</a>
+          <a class="nav-link" data-nav href="blog.html">Blog</a>
+        </nav>
+        <a class="primary-button" href="blog.html">Ver novidades</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <h1 class="section-title">Cardápio completo</h1>
+        <p class="section-subtitle">
+          Pesquise pelo nome, ingredientes, benefícios, categoria ou qualquer
+          informação do produto.
+        </p>
+
+        <div class="search-bar">
+          <input
+            type="search"
+            placeholder="Buscar por produto, ingrediente, origem..."
+            aria-label="Buscar produtos"
+            data-search
+          />
+          <div class="view-toggle">
+            <button type="button" data-view="grid" class="active">Grade</button>
+            <button type="button" data-view="list">Lista</button>
+          </div>
+        </div>
+
+        <p class="section-subtitle" data-filter-info></p>
+        <div class="product-list" data-view="grid" data-product-list></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© <span data-year></span> Império Natural.</p>
+        <a class="sr-only" href="admin.html">Acesso administrador</a>
+      </div>
+    </footer>
+  </body>
+</html>

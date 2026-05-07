@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin · Império Natural</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/app.js" defer></script>
+    <script type="module" src="js/admin.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="logo" href="index.html">Império Natural</a>
+        <nav class="nav-links">
+          <a class="nav-link" data-nav href="index.html">Início</a>
+          <a class="nav-link" data-nav href="produtos.html">Produtos</a>
+          <a class="nav-link" data-nav href="blog.html">Blog</a>
+        </nav>
+        <a class="primary-button" href="index.html">Voltar</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <h1 class="section-title">Dashboard do Cardápio</h1>
+        <p class="section-subtitle">
+          Área administrativa reservada. Use este painel para cadastrar produtos,
+          atualizar anúncios de destaque e publicar novidades no blog.
+        </p>
+
+        <div class="admin-section">
+          <h2>Cadastro de produtos</h2>
+          <form data-product-form>
+            <div class="form-grid">
+              <div>
+                <label for="product-name">Nome do produto</label>
+                <input id="product-name" name="name" required />
+              </div>
+              <div>
+                <label for="product-category">Categoria</label>
+                <select id="product-category" name="category" required></select>
+              </div>
+              <div>
+                <label for="product-price">Preço (R$)</label>
+                <input id="product-price" name="price" type="number" step="0.01" required />
+              </div>
+              <div>
+                <label for="product-unit">Peso/Unidade</label>
+                <input id="product-unit" name="unit" placeholder="Ex: 200g" required />
+              </div>
+              <div>
+                <label for="product-origin">Origem</label>
+                <input id="product-origin" name="origin" required />
+              </div>
+              <div>
+                <label for="product-storage">Armazenamento</label>
+                <input id="product-storage" name="storage" required />
+              </div>
+              <div>
+                <label for="product-portion">Porção sugerida</label>
+                <input id="product-portion" name="portion" placeholder="Ex: 30g" />
+              </div>
+              <div>
+                <label for="product-calories">Calorias por porção</label>
+                <input id="product-calories" name="calories" placeholder="Ex: 120 kcal" />
+              </div>
+              <div>
+                <label for="product-nutrition">Destaque nutricional</label>
+                <input
+                  id="product-nutrition"
+                  name="nutritionHighlight"
+                  placeholder="Ex: Fonte de fibras"
+                />
+              </div>
+              <div>
+                <label for="product-badges">Selos (separados por vírgula)</label>
+                <input id="product-badges" name="badges" />
+              </div>
+              <div>
+                <label for="product-tags">Palavras-chave</label>
+                <input id="product-tags" name="tags" />
+              </div>
+              <div>
+                <label for="product-ingredients">Ingredientes</label>
+                <textarea id="product-ingredients" name="ingredients" required></textarea>
+              </div>
+              <div>
+                <label for="product-allergens">Alertas de alergênicos</label>
+                <textarea id="product-allergens" name="allergens" required></textarea>
+              </div>
+              <div>
+                <label for="product-description">Descrição</label>
+                <textarea id="product-description" name="description" required></textarea>
+              </div>
+            </div>
+            <div class="form-grid" data-category-fields></div>
+            <button class="primary-button" type="submit">Salvar produto</button>
+          </form>
+          <div class="admin-list" data-product-list></div>
+        </div>
+
+        <div class="admin-section">
+          <h2>Anúncios, ofertas e eventos</h2>
+          <form data-highlight-form>
+            <div class="form-grid">
+              <div>
+                <label for="highlight-title">Título</label>
+                <input id="highlight-title" name="title" required />
+              </div>
+              <div>
+                <label for="highlight-type">Tipo</label>
+                <select id="highlight-type" name="type" required>
+                  <option value="Oferta">Oferta</option>
+                  <option value="Evento">Evento</option>
+                  <option value="Anúncio">Anúncio</option>
+                </select>
+              </div>
+              <div>
+                <label for="highlight-subtitle">Subtítulo</label>
+                <input id="highlight-subtitle" name="subtitle" required />
+              </div>
+              <div>
+                <label for="highlight-date">Período/Data</label>
+                <input id="highlight-date" name="date" required />
+              </div>
+              <div>
+                <label for="highlight-description">Descrição</label>
+                <textarea id="highlight-description" name="description" required></textarea>
+              </div>
+              <div>
+                <label for="highlight-post">Post do blog relacionado</label>
+                <select id="highlight-post" name="postId" required></select>
+              </div>
+            </div>
+            <button class="primary-button" type="submit">Salvar anúncio</button>
+          </form>
+          <div class="admin-list" data-highlight-list></div>
+        </div>
+
+        <div class="admin-section">
+          <h2>Publicações do blog</h2>
+          <form data-post-form>
+            <div class="form-grid">
+              <div>
+                <label for="post-title">Título</label>
+                <input id="post-title" name="title" required />
+              </div>
+              <div>
+                <label for="post-date">Data</label>
+                <input id="post-date" name="date" required />
+              </div>
+              <div>
+                <label for="post-category">Categoria</label>
+                <input id="post-category" name="category" required />
+              </div>
+              <div>
+                <label for="post-summary">Resumo</label>
+                <textarea id="post-summary" name="summary" required></textarea>
+              </div>
+              <div>
+                <label for="post-content">Conteúdo (parágrafos separados por linha)</label>
+                <textarea id="post-content" name="content" required></textarea>
+              </div>
+            </div>
+            <button class="primary-button" type="submit">Publicar</button>
+          </form>
+          <div class="admin-list" data-post-list></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© <span data-year></span> Império Natural.</p>
+        <a class="sr-only" href="admin.html">Acesso administrador</a>
+      </div>
+    </footer>
+  </body>
+</html>

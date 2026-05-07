@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Império Natural · Cardápio Digital</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/app.js" defer></script>
+    <script type="module" src="js/home.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="logo" href="index.html">Império Natural</a>
+        <nav class="nav-links">
+          <a class="nav-link" data-nav href="index.html">Início</a>
+          <a class="nav-link" data-nav href="produtos.html">Produtos</a>
+          <a class="nav-link" data-nav href="blog.html">Blog</a>
+        </nav>
+        <a class="primary-button" href="produtos.html">Ver cardápio</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <div class="hero">
+          <div>
+            <span class="pill">Loja física · Produtos naturais</span>
+            <h1>Seu cardápio digital do Império Natural</h1>
+            <p>
+              Explore os produtos frescos, ofertas e eventos da loja em uma
+              plataforma simples e organizada.
+            </p>
+            <a class="primary-button" href="produtos.html">Explorar produtos</a>
+          </div>
+          <div>
+            <h3>O que você encontra aqui</h3>
+            <ul>
+              <li>Destaques e anúncios em carrossel</li>
+              <li>Categorias com seleção rápida</li>
+              <li>Busca inteligente por ingredientes e benefícios</li>
+              <li>Detalhes completos de cada produto</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Destaques, ofertas e eventos</h2>
+        <p class="section-subtitle">
+          Tudo o que está acontecendo no Império Natural passa por aqui. Clique
+          para ver detalhes no blog.
+        </p>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track" data-carousel-track></div>
+          <div class="carousel-controls">
+            <button class="carousel-button" type="button" data-carousel-prev>
+              ◀
+            </button>
+            <button class="carousel-button" type="button" data-carousel-next>
+              ▶
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Categorias em destaque</h2>
+        <p class="section-subtitle">
+          Escolha uma categoria para acessar rapidamente os produtos disponíveis.
+        </p>
+        <div class="category-grid" data-categories></div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Seleções da semana</h2>
+        <p class="section-subtitle">
+          Produtos com alta procura e ótima combinação para o dia a dia.
+        </p>
+        <div class="product-grid" data-featured-products></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Império Natural</strong>
+          <p>Produtos naturais para a sua rotina.</p>
+        </div>
+        <div>
+          <strong>Endereço</strong>
+          <p>Rua das Ervas, 145 - Asa Sul, Brasília</p>
+        </div>
+        <div>
+          <strong>Contato</strong>
+          <p>(61) 3333-2456</p>
+          <p>Seg a Sáb · 08h às 20h</p>
+        </div>
+      </div>
+      <div class="container">
+        <p>© <span data-year></span> Império Natural.</p>
+        <a class="sr-only" href="admin.html">Acesso administrador</a>
+      </div>
+    </footer>
+  </body>
+</html>
