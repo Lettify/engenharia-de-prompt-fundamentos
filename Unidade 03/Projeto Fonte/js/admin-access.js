@@ -1,20 +1,55 @@
+const ADMIN_URL = "admin.html";
+const SECRET_SEQUENCE = ["a", "d", "m", "i", "n"];
+const SECRET_TIMEOUT = 1500;
+
+const isEditableTarget = (target) =>
+  Boolean(
+    target?.closest("input, textarea, select, [contenteditable='true']")
+  );
+
+let keyBuffer = [];
+let keyTimer = null;
+
+const resetKeyBuffer = () => {
+  keyBuffer = [];
+  if (keyTimer) {
+    window.clearTimeout(keyTimer);
+    keyTimer = null;
+  }
+};
+
+document.addEventListener("keydown", (event) => {
+  if (isEditableTarget(event.target)) {
+    return;
+  }
+
+  if (event.key.length !== 1) {
+    return;
+  }
+
+  const key = event.key.toLowerCase();
+  keyBuffer = [...keyBuffer, key].slice(-SECRET_SEQUENCE.length);
+
+  if (keyBuffer.join("") === SECRET_SEQUENCE.join("")) {
+    resetKeyBuffer();
+    window.location.href = ADMIN_URL;
+    return;
+  }
+
+  if (keyTimer) {
+    window.clearTimeout(keyTimer);
+  }
+
+  keyTimer = window.setTimeout(resetKeyBuffer, SECRET_TIMEOUT);
+});
+
 document.querySelectorAll("[data-admin-trigger]").forEach((trigger) => {
-  let clickCount = 0;
-  let clickTimer = null;
-
-  trigger.addEventListener("click", () => {
-    clickCount += 1;
-
-    if (clickCount === 1) {
-      clickTimer = window.setTimeout(() => {
-        clickCount = 0;
-      }, 800);
+  trigger.addEventListener("click", (event) => {
+    if (!event.shiftKey) {
+      return;
     }
 
-    if (clickCount === 3) {
-      window.clearTimeout(clickTimer);
-      clickCount = 0;
-      window.location.href = "admin.html";
-    }
+    event.preventDefault();
+    window.location.href = ADMIN_URL;
   });
 });
