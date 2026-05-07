@@ -2,6 +2,8 @@ const ADMIN_URL = "admin.html";
 const SECRET_SEQUENCE = ["a", "d", "m", "i", "n"];
 const SECRET_TIMEOUT = 1500;
 
+const isSequenceKey = (key) => /^[a-z]$/i.test(key);
+
 const isEditableTarget = (target) =>
   Boolean(
     target?.closest("input, textarea, select, [contenteditable='true']")
@@ -23,7 +25,7 @@ document.addEventListener("keydown", (event) => {
     return;
   }
 
-  if (event.key.length !== 1) {
+  if (!isSequenceKey(event.key)) {
     return;
   }
 
