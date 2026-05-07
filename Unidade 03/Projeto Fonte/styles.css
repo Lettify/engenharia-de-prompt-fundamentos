@@ -1,19 +1,19 @@
 :root {
-  color-scheme: light;
-  --green-900: #124431;
-  --green-800: #185a40;
-  --green-700: #1f6f4a;
-  --green-200: #d8efe3;
-  --green-100: #ecf7f0;
-  --sand-100: #f8f4ec;
-  --sand-200: #efe7da;
-  --amber-500: #f4b144;
-  --amber-600: #e39c2b;
-  --ink-900: #1b1b1b;
-  --ink-700: #333333;
-  --ink-500: #4a4a4a;
-  --white: #ffffff;
-  --shadow: 0 18px 38px rgba(18, 68, 49, 0.12);
+  color-scheme: dark;
+  --green-900: #d4a373;
+  --green-800: #bc6c25;
+  --green-700: #606c38;
+  --green-200: rgba(212, 163, 115, 0.2);
+  --green-100: rgba(212, 163, 115, 0.12);
+  --sand-100: #1e1b18;
+  --sand-200: #2a2521;
+  --amber-500: #bc6c25;
+  --amber-600: #d4a373;
+  --ink-900: #e9edc9;
+  --ink-700: #d4a373;
+  --ink-500: #bc6c25;
+  --white: #2a2521;
+  --shadow: 0 18px 38px rgba(0, 0, 0, 0.45);
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 12px;
@@ -47,7 +47,7 @@ img {
 
 .site-header {
   background: var(--white);
-  border-bottom: 1px solid rgba(18, 68, 49, 0.08);
+  border-bottom: 1px solid rgba(233, 237, 201, 0.12);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -105,19 +105,19 @@ img {
 
 .primary-button {
   background: var(--green-700);
-  color: var(--white);
-  box-shadow: 0 12px 24px rgba(31, 111, 74, 0.2);
+  color: var(--ink-900);
+  box-shadow: 0 12px 24px rgba(96, 108, 56, 0.35);
 }
 
 .primary-button:hover,
 .primary-button:focus {
   transform: translateY(-1px);
-  box-shadow: 0 14px 28px rgba(31, 111, 74, 0.25);
+  box-shadow: 0 14px 28px rgba(96, 108, 56, 0.45);
 }
 
 .ghost-button {
   background: transparent;
-  border: 1px solid rgba(18, 68, 49, 0.2);
+  border: 1px solid rgba(233, 237, 201, 0.25);
   color: var(--green-900);
 }
 
@@ -138,7 +138,11 @@ img {
 }
 
 .hero {
-  background: linear-gradient(135deg, rgba(31, 111, 74, 0.12), rgba(244, 177, 68, 0.12));
+  background: linear-gradient(
+    135deg,
+    rgba(96, 108, 56, 0.35),
+    rgba(212, 163, 115, 0.2)
+  );
   border-radius: var(--radius-lg);
   padding: 60px;
   display: grid;
@@ -218,7 +222,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--ink-900);
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -237,7 +241,7 @@ img {
   width: 38px;
   height: 38px;
   cursor: pointer;
-  box-shadow: 0 8px 16px rgba(18, 68, 49, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .category-grid,
@@ -267,7 +271,7 @@ img {
 }
 
 .category-card {
-  border: 1px solid rgba(18, 68, 49, 0.08);
+  border: 1px solid rgba(233, 237, 201, 0.12);
 }
 
 .category-icon {
@@ -284,7 +288,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--ink-900);
   font-weight: 600;
 }
 
@@ -349,7 +353,7 @@ img {
   min-width: 220px;
   border-radius: 999px;
   padding: 12px 18px;
-  border: 1px solid rgba(18, 68, 49, 0.2);
+  border: 1px solid rgba(233, 237, 201, 0.25);
   background: var(--white);
 }
 
@@ -361,14 +365,14 @@ img {
 .view-toggle button {
   border-radius: 999px;
   padding: 10px 16px;
-  border: 1px solid rgba(18, 68, 49, 0.2);
+  border: 1px solid rgba(233, 237, 201, 0.25);
   background: var(--white);
   cursor: pointer;
 }
 
 .view-toggle button.active {
   background: var(--green-700);
-  color: var(--white);
+  color: var(--ink-900);
 }
 
 .detail-grid {
@@ -399,7 +403,7 @@ img {
   justify-content: space-between;
   gap: 16px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(18, 68, 49, 0.08);
+  border-bottom: 1px solid rgba(233, 237, 201, 0.12);
 }
 
 .info-item span {
@@ -456,7 +460,7 @@ img {
   width: 100%;
   padding: 10px 12px;
   border-radius: 10px;
-  border: 1px solid rgba(18, 68, 49, 0.2);
+  border: 1px solid rgba(233, 237, 201, 0.2);
   font-family: inherit;
 }
 
@@ -485,7 +489,7 @@ img {
 .admin-item button {
   border: none;
   background: var(--amber-500);
-  color: var(--white);
+  color: var(--ink-900);
   padding: 6px 12px;
   border-radius: 999px;
   cursor: pointer;
@@ -494,7 +498,7 @@ img {
 .footer {
   margin-top: 60px;
   padding: 30px 0 50px;
-  border-top: 1px solid rgba(18, 68, 49, 0.08);
+  border-top: 1px solid rgba(233, 237, 201, 0.12);
   color: var(--ink-500);
 }
 

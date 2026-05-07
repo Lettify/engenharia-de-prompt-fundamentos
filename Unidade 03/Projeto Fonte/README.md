@@ -15,5 +15,5 @@ puros para facilitar o uso local.
 
 ## Acesso administrador
 
-O acesso do administrador não fica visível no menu principal. Use o atalho
-`Ctrl + Shift + A` em qualquer página para abrir o painel `admin.html`.
+O acesso do administrador não fica visível no menu principal. Clique três vezes
+no título “Império Natural” no topo da página para abrir o painel `admin.html`.

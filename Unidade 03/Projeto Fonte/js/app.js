@@ -10,8 +10,23 @@ document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-document.addEventListener("keydown", (event) => {
-  if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "a") {
-    window.location.href = "admin.html";
-  }
+document.querySelectorAll("[data-admin-trigger]").forEach((trigger) => {
+  let clickCount = 0;
+  let clickTimer = null;
+
+  trigger.addEventListener("click", () => {
+    clickCount += 1;
+
+    if (clickCount === 1) {
+      clickTimer = window.setTimeout(() => {
+        clickCount = 0;
+      }, 800);
+    }
+
+    if (clickCount === 3) {
+      window.clearTimeout(clickTimer);
+      clickCount = 0;
+      window.location.href = "admin.html";
+    }
+  });
 });
