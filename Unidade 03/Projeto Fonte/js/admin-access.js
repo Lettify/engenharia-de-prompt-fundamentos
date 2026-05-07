@@ -30,7 +30,10 @@ document.addEventListener("keydown", (event) => {
   }
 
   const key = event.key.toLowerCase();
-  keyBuffer = [...keyBuffer, key].slice(-SECRET_SEQUENCE.length);
+  keyBuffer.push(key);
+  if (keyBuffer.length > SECRET_SEQUENCE.length) {
+    keyBuffer.shift();
+  }
 
   if (keyBuffer.join("") === SECRET_SEQUENCE.join("")) {
     resetKeyBuffer();
@@ -38,10 +41,7 @@ document.addEventListener("keydown", (event) => {
     return;
   }
 
-  if (keyTimer) {
-    window.clearTimeout(keyTimer);
-  }
-
+  window.clearTimeout(keyTimer);
   keyTimer = window.setTimeout(resetKeyBuffer, SECRET_TIMEOUT);
 });
 
