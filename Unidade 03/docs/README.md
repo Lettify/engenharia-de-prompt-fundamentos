@@ -1,5 +1,7 @@
 # Projeto Módulo 3 – Low Code/No Code/Vibecode
 
+[[ACESSAR VERSÃO PDF](https://github.com/Lettify/engenharia-de-prompt-udf/blob/main/Unidade%2003/docs/relatorio.pdf)]
+
 ## 📌 Desafio Escolhido
 
 Controle de Vendas. Com o objetivo de automatizar o cálculo e construção de estatísticas de vendas diárias que são anotadas manualmente em blocos de papel, de uma loja em uma feira. Em vez do caixa somar e categorizar os papéis das vendas manualmente e registrar estas informações em um arquivo salvo localmente em máquina, ela utilizaria este site para conseguir gerenciar tudo.
