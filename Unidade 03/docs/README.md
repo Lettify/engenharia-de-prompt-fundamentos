@@ -67,7 +67,7 @@ A autenticação por código único funciona até certo momento, ele foi impleme
 
 ## 👥 Colaboração
 
-Apenas eu, ManusAI, e GitHub Copilot.
+[Michael Felipe de Sousa Silva](https://github.com/Lettify/), ManusAI, e GitHub Copilot.
 
 ---
 
